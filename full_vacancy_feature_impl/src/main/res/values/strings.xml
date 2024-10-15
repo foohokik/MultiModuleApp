@@ -1,0 +1,15 @@
+<resources>
+    <string name="tv_experience"> Требуемый опыт: %1$s </string>
+    <string name="tv_schedules"> Занятость </string>
+    <string name="tv_applied_people"> %1$s уже откликнулись </string>
+    <string name="tv_looking_number"> %1$s сейчас смотрят </string>
+    <string name="tv_address"> %1$s, %2$s, %3$s  </string>
+    <string name="tv_descripton"> Описание </string>
+    <string name="tv_responsibities_title"> Ваши задачи </string>
+    <string name="tv_responsibilities"> Обязанности </string>
+    <string name="tv_title"> Должность </string>
+    <string name="ask"> Задайте вопрос работодателю </string>
+    <string name="tv_he_get"> Он получит его с откликом на вакансию </string>
+    <string name="btn_response">Откликнуться </string>
+    <string name="tv_company_name">Компания </string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/search_graph"
+        android:icon="@drawable/search_icon"
+        android:title="@string/search" />
+
+    <item
+        android:id="@+id/favorite_graph"
+        android:icon="@drawable/favorite_icon"
+        android:title="@string/favourite" />
+
+    <item
+        android:id="@+id/responses_nav_graph"
+        android:icon="@drawable/response_icon"
+        android:title="@string/response" />
+
+    <item
+        android:id="@+id/messages_graph"
+        android:icon="@drawable/messages_icon"
+        android:title="@string/message" />
+
+    <item
+        android:id="@+id/profile_graph"
+        android:icon="@drawable/profile_icon"
+        android:title="@string/profile" />
+
+</menu>

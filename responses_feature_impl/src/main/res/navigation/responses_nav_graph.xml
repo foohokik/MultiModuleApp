@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/responses_nav_graph"
+    app:startDestination="@+id/responsesFragment">
+
+    <fragment
+        android:id="@+id/responsesFragment"
+        android:name="com.example.responses_feature_impl.presentation.ResponsesFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_responses">
+
+        <deepLink
+            android:id="@+id/ResponsesDeepLink"
+            app:uri="app://responses" />
+    </fragment>
+
+</navigation>

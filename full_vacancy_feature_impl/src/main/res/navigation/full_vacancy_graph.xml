@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/full_vacancy_graph"
+    app:startDestination = "@id/fullVacancyFragment">
+
+    <fragment
+        android:id="@+id/fullVacancyFragment"
+        android:name="com.example.full_vacancy_feature_impl.presentation.FullVacancyFragment"
+        android:label="fragment_full_vacancy"
+        tools:layout="@layout/fragment_full_vacancy">
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <deepLink
+            android:id="@+id/FullVacancyDeepLink"
+            app:uri="app://full_vacancy/{id}" />
+        <action
+            android:id="@+id/action_fullVacancyFragment_to_responseFragment"
+            app:destination="@id/responseFragment" />
+    </fragment>
+    <dialog android:id="@+id/responseFragment"
+        android:name="com.example.full_vacancy_feature_impl.presentation.bottom_sheet.BottomSheetResponseFragment"
+        android:label="bottom_sheet_response"
+        tools:layout="@layout/bottom_sheet_response">
+    <argument
+        android:name="title"
+        app:argType="string" />
+    </dialog>
+
+</navigation>

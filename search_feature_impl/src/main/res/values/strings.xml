@@ -1,0 +1,7 @@
+<resources>
+    <string name="edit_hint">Должность, ключевые слова</string>
+    <string name="filter_in_according">По соответствию</string>
+    <string name="offer_item_raise">Поднять</string>
+    <string name="vacancy_item_looking">Сейчас просматривает 1 человек</string>
+    <string name="respond">Откликнуться</string>
+</resources>

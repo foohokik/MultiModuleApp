@@ -11,11 +11,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.auth_feature_impl.databinding.FragmentLoginBinding
 import com.example.auth_feature_impl.di.AuthFeatureComponentHolder
 import com.example.auth_feature_impl.presentation.SideEffects
+import com.example.core_utils.extensions.hideKeyboard
 import com.example.core_utils.extensions.lazyViewModel
+import com.example.core_utils.extensions.showKeyBoard
 import com.example.core_utils.presentation.BaseFragmentBinding
 import kotlinx.coroutines.launch
-import v.shihanova.core_utils.extensions.hideKeyboard
-import v.shihanova.core_utils.extensions.showKeyBoard
 
 
 class LoginFragment : BaseFragmentBinding<FragmentLoginBinding> (FragmentLoginBinding::inflate)

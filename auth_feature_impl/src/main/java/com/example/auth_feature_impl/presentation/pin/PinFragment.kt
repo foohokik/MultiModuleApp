@@ -1,25 +1,20 @@
 package com.example.auth_feature_impl.presentation.pin
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.core.widget.doAfterTextChanged
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.auth_feature_impl.R
-import com.example.auth_feature_impl.databinding.FragmentLoginBinding
 import com.example.auth_feature_impl.databinding.FragmentPinBinding
 import com.example.auth_feature_impl.di.AuthFeatureComponentHolder
 import com.example.core_utils.extensions.lazyViewModel
+import com.example.core_utils.extensions.openKeyboard
 import com.example.core_utils.presentation.BaseFragmentBinding
 import kotlinx.coroutines.launch
-import v.shihanova.core_utils.extensions.showKeyBoard
 
 class PinFragment : BaseFragmentBinding<FragmentPinBinding>(FragmentPinBinding::inflate) {
 
@@ -47,8 +42,8 @@ class PinFragment : BaseFragmentBinding<FragmentPinBinding>(FragmentPinBinding::
 
     private fun initView() {
         with(binding){
-            requireContext().showKeyBoard(pin)
-            binding.pin.doAfterTextChanged {
+            pin.openKeyboard()
+            pin.doAfterTextChanged {
                 viewModel.checkPin(it.toString())
             }
             btnToMain.setOnClickListener {

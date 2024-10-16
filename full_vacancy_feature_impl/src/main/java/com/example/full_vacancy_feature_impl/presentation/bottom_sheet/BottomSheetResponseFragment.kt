@@ -1,18 +1,14 @@
 package com.example.full_vacancy_feature_impl.presentation.bottom_sheet
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.navArgs
-import com.example.core_utils.presentation.BaseFragmentBinding
-import com.example.full_vacancy_feature_impl.R
+import com.example.core_utils.presentation.BaseDialogBinding
 import com.example.full_vacancy_feature_impl.databinding.BottomSheetResponseBinding
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomSheetResponseFragment :
-    BaseFragmentBinding<BottomSheetResponseBinding>(BottomSheetResponseBinding::inflate) {
+    BaseDialogBinding<BottomSheetResponseBinding>(BottomSheetResponseBinding::inflate) {
 
     private val args by navArgs<BottomSheetResponseFragmentArgs>()
 

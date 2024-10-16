@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ResponsesFragment"
     android:background="@color/black"
-    android:id="@+id/responsesFragment">
+    android:id="@+id/responseFragment">
 
     <TextView
         android:layout_width="match_parent"

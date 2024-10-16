@@ -9,6 +9,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.auth_feature_api.AuthFeatureApi
 import com.example.favorite_feature_api.FavoriteApi
 import com.example.full_vacancy_feature_api.FullVacancyApi
+import com.example.messages_feature_api.MessagesFeatureApi
+import com.example.profile_feature_api.ProfileFeatureApi
 import com.example.responses_feature_api.ResponsesFeatureApi
 import com.example.search_feature_api.SearchFeatureApi
 import com.example.testmodularityapp.databinding.ActivityMainBinding
@@ -31,6 +33,12 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var responsesFeatureApi: ResponsesFeatureApi
+
+    @Inject
+    lateinit var profileFeatureApi: ProfileFeatureApi
+
+    @Inject
+    lateinit var messagesFeatureApi: MessagesFeatureApi
 
     private val navController: NavController by lazy { findNavController(R.id.nav_host_fragment) }
 
@@ -57,37 +65,25 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         initBottomNavView()
-
     }
 
 
     private fun initBottomNavView() {
-//        controller = this.findNavController(R.id.nav_host_fragment)
         val navView = binding.bottomNavView
         navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                com.example.favorite_feature_impl.R.id.favoriteFragment, com.example.search_feature_impl.R.id.searchFragment, com.example.full_vacancy_feature_impl.R.id.fullVacancyFragment -> navView.visibility = View.VISIBLE
+                com.example.favorite_feature_impl.R.id.favoriteFragment,
+                com.example.search_feature_impl.R.id.searchFragment,
+                com.example.full_vacancy_feature_impl.R.id.fullVacancyFragment,
+                com.example.messages_feature_impl.R.id.messageFragment,
+                com.example.profile_feature_impl.R.id.profileFragment,
+                com.example.responses_feature_impl.R.id.responseFragment-> navView.visibility = View.VISIBLE
                 else -> navView.visibility = View.GONE
             }
         }
-//        navView.setOnItemSelectedListener {
-//                item ->
-//            when (item.itemId) {
-//                R.id.searchFragment -> openSearch()
-//                else -> openSearch()
-//            }
-//            true
-//        }
     }
 
-    private fun openSearch() {
-//       controller.navigate("app://search".toUri())
-
-//        searchFeature
-//            .searchLauncher()
-//            .startSearchFragment(controller, "app://search".toUri())
-    }
 
 }

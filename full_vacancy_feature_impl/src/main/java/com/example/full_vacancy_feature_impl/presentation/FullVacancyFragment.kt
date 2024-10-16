@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.core_utils.extensions.assistedViewModel
-import com.example.core_utils.presentation.BaseFragmentBinding
+import com.example.core_utils.presentation.BaseDialogBinding
 import com.example.full_vacancy_feature_impl.R
 import com.example.full_vacancy_feature_impl.databinding.FragmentFullVacancyBinding
 import com.example.full_vacancy_feature_impl.di.FullVacancyFeatureComponentHolder
@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 
 
 class FullVacancyFragment :
-    BaseFragmentBinding<FragmentFullVacancyBinding>(FragmentFullVacancyBinding::inflate) {
+    BaseDialogBinding<FragmentFullVacancyBinding>(FragmentFullVacancyBinding::inflate) {
 
 
     private val viewModel: FullVacancyViewModel by assistedViewModel {

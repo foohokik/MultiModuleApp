@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/responses_nav_graph"
-    app:startDestination="@+id/responsesFragment">
+    app:startDestination="@+id/responseFragment">
 
     <fragment
-        android:id="@+id/responsesFragment"
+        android:id="@+id/responseFragment"
         android:name="com.example.responses_feature_impl.presentation.ResponsesFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_responses">

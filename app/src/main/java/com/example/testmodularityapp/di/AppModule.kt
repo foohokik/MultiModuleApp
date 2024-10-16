@@ -16,6 +16,12 @@ import com.example.favorite_feature_impl.di.FavoriteFeatureDependencies
 import com.example.full_vacancy_feature_api.FullVacancyApi
 import com.example.full_vacancy_feature_impl.di.FullVacancyFeatureComponentHolder
 import com.example.full_vacancy_feature_impl.di.FullVacancyFeatureDependencies
+import com.example.messages_feature_api.MessagesFeatureApi
+import com.example.messages_feature_impl.di.MessagesFeatureComponentHolder
+import com.example.messages_feature_impl.di.MessagesFeatureDependencies
+import com.example.profile_feature_api.ProfileFeatureApi
+import com.example.profile_feature_impl.di.ProfileFeatureComponentHolder
+import com.example.profile_feature_impl.di.ProfileFeatureDependencies
 import com.example.responses_feature_api.ResponsesFeatureApi
 import com.example.responses_feature_impl.di.ResponsesFeatureComponentHolder
 import com.example.responses_feature_impl.di.ResponsesFeatureDependencies
@@ -105,7 +111,20 @@ class AppModule {
 
 	@Singleton
 	@Provides
-	fun provideFeatureResponsesDependencies() : ResponsesFeatureDependencies{
+	fun provideFeatureProfileDependencies() : ProfileFeatureDependencies {
+		return object : ProfileFeatureDependencies {
+		}
+	}
+
+	@Provides
+	fun provideFeatureProfile (dependencies: ProfileFeatureDependencies): ProfileFeatureApi {
+		ProfileFeatureComponentHolder.init(dependencies)
+		return ProfileFeatureComponentHolder.get()
+	}
+
+	@Singleton
+	@Provides
+	fun provideFeatureResponsesDependencies() : ResponsesFeatureDependencies {
 		return object : ResponsesFeatureDependencies {
 		}
 	}
@@ -114,6 +133,19 @@ class AppModule {
 	fun provideFeatureResponses (dependencies: ResponsesFeatureDependencies): ResponsesFeatureApi {
 		ResponsesFeatureComponentHolder.init(dependencies)
 		return ResponsesFeatureComponentHolder.get()
+	}
+
+	@Singleton
+	@Provides
+	fun provideFeatureMessagesDependencies() : MessagesFeatureDependencies {
+		return object : MessagesFeatureDependencies {
+		}
+	}
+
+	@Provides
+	fun provideFeatureMessages (dependencies: MessagesFeatureDependencies): MessagesFeatureApi {
+		MessagesFeatureComponentHolder.init(dependencies)
+		return MessagesFeatureComponentHolder.get()
 	}
 
 }

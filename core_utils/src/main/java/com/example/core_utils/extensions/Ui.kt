@@ -1,4 +1,4 @@
-package v.shihanova.core_utils.extensions
+package com.example.core_utils.extensions
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle

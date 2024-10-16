@@ -73,6 +73,8 @@ dependencies {
     implementation(project(":responses_feature_impl"))
     implementation(project(":profile_feature_impl"))
     implementation(project(":profile_feature_api"))
+    implementation(project(":messages_feature_api"))
+    implementation(project(":messages_feature_impl"))
 
 
 

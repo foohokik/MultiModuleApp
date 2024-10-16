@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_nav_graph"
+    app:startDestination="@+id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.profile_feature_impl.presentation.ProfileFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragmen_profile">
+
+        <deepLink
+            android:id="@+id/ProfileDeepLink"
+            app:uri="app://profile" />
+    </fragment>
+
+</navigation>

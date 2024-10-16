@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/messages_nav_graph"
+    app:startDestination="@+id/messageFragment">
+
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.example.messages_feature_impl.presentation.MessageFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_message">
+
+        <deepLink
+            android:id="@+id/MessagesDeepLink"
+            app:uri="app://messages" />
+    </fragment>
+
+</navigation>

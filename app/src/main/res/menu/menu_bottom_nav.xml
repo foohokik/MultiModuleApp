@@ -16,12 +16,12 @@
         android:title="@string/response" />
 
     <item
-        android:id="@+id/messages_graph"
+        android:id="@+id/messages_nav_graph"
         android:icon="@drawable/messages_icon"
         android:title="@string/message" />
 
     <item
-        android:id="@+id/profile_graph"
+        android:id="@+id/profile_nav_graph"
         android:icon="@drawable/profile_icon"
         android:title="@string/profile" />
 

@@ -11,7 +11,7 @@ import dagger.Component
 import dagger.internal.Preconditions
 import javax.inject.Singleton
 
-@Component(modules = [AppModule::class])
+@Component(modules = [AppModule::class, ])
 @Singleton
 interface AppComponent {
     fun inject(app: App)

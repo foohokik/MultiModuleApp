@@ -7,7 +7,7 @@ import com.example.full_vacancy_feature_impl.presentation.FullVacancyViewModel
 import dagger.Component
 
 @Component(
-    modules = [FullVacancyFeatureModule::class],
+    modules = [FullVacancyFeatureModule::class, DispatcherModule::class],
     dependencies = [FullVacancyFeatureDependencies::class]
 )
 @Feature

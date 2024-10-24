@@ -2,12 +2,14 @@ package com.example.favorite_feature_impl.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.favorite_feature_impl.di.IoDispatcher
 import com.example.favorite_feature_impl.domain.FavoriteFeatureInteractor
 import com.example.favorite_feature_impl.presentation.adapter.VacancyItemListener
 import com.example.favorite_feature_impl.presentation.model.VacancyUI
 import com.example.favorite_feature_impl.presentation.model.toVacanciesListUI
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -16,7 +18,8 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class FavoriteViewModel @AssistedInject constructor(
-    private val interactor: FavoriteFeatureInteractor
+    private val interactor: FavoriteFeatureInteractor,
+    @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) : ViewModel(), VacancyItemListener {
 
     private val _vacanciesFlow = MutableStateFlow(emptyList<VacancyUI>())
@@ -30,7 +33,7 @@ class FavoriteViewModel @AssistedInject constructor(
     }
 
     fun getVacancies() {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatcher) {
             val result = interactor.getAllVacancies().toVacanciesListUI()
             _vacanciesFlow.value = result
         }
@@ -43,7 +46,7 @@ class FavoriteViewModel @AssistedInject constructor(
     }
 
     override fun onFavoriteIconClick(vacancy: VacancyUI) {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatcher) {
             interactor.updateVacancyIsFavorite(!vacancy.isFavorite, vacancy.id)
         }
         val list = _vacanciesFlow.value.toMutableList()

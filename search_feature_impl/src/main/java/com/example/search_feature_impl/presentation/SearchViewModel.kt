@@ -34,7 +34,7 @@ class SearchViewModel @AssistedInject constructor(
 
 
 
-     fun getOffers()  {
+   private fun getOffers()  {
         viewModelScope.launch(dispatcher) {
             interactor.getInitialData()
         }
@@ -48,7 +48,7 @@ class SearchViewModel @AssistedInject constructor(
     }
 
     override fun onFavoriteIconClick(vacancy: OffersUI.VacancyUI) {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatcher) {
             interactor.updateVacancyIsFavorite(!vacancy.isFavorite, vacancy.id)
         }
         val list = screenStateFlow.value
@@ -74,7 +74,7 @@ class SearchViewModel @AssistedInject constructor(
 
 
     fun updateList () {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatcher) {
             interactor.updateVacancyList()
         }
     }

@@ -1,7 +1,8 @@
 <resources>
     <string name="tv_experience"> Требуемый опыт: %1$s </string>
     <string name="tv_schedules"> Занятость </string>
-    <string name="tv_applied_people"> %1$s уже откликнулись </string>
+    <string name="tv_applied_people_1"> %1$s уже откликнулись </string>
+    <string name="tv_applied_people_2"> Будьте первыми </string>
     <string name="tv_looking_number"> %1$s сейчас смотрят </string>
     <string name="tv_address"> %1$s, %2$s, %3$s  </string>
     <string name="tv_descripton"> Описание </string>

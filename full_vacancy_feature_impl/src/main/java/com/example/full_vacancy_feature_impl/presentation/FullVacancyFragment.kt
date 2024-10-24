@@ -69,8 +69,12 @@ class FullVacancyFragment :
                 vacancy.appliedNumber,
                 vacancy.appliedNumber
             )
-            tvAppliedPeople.text =
-                requireContext().getString(R.string.tv_applied_people, peopleAppliedText)
+
+            tvAppliedPeople.text = if ( vacancy.appliedNumber !=0) {
+                requireContext().getString(R.string.tv_applied_people_1, peopleAppliedText)
+            } else {
+                requireContext().getString(R.string.tv_applied_people_2)
+            }
             val lookingNumberText = requireContext().resources.getQuantityString(
                 com.example.core_utils.R.plurals.plurals_vacancies,
                 vacancy.lookingNumber,

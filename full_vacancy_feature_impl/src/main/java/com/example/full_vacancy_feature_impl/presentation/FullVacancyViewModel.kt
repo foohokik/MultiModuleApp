@@ -3,11 +3,13 @@ package com.example.full_vacancy_feature_impl.presentation
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.full_vacancy_feature_impl.di.IoDispatcher
 import com.example.full_vacancy_feature_impl.domain.FullVacancyFeatureInteractor
 import com.example.full_vacancy_feature_impl.presentation.model.VacancyUI
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -15,6 +17,7 @@ import kotlinx.coroutines.launch
 
 class FullVacancyViewModel @AssistedInject constructor(
     private val interactor: FullVacancyFeatureInteractor,
+    @IoDispatcher private val dispatcher: CoroutineDispatcher,
     @Assisted savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -29,7 +32,7 @@ class FullVacancyViewModel @AssistedInject constructor(
     }
 
     private fun getVacancyById(id: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatcher) {
             _contentVacancyState.value = interactor.getVacancyById(id)
         }
     }
